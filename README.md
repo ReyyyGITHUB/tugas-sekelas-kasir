@@ -1,71 +1,44 @@
-```md
 # Sistem Kasir Sederhana
 
-Project ini berisi hasil integrasi function dari beberapa kelompok untuk tugas LKPD Pengembangan Perangkat Lunak kelas X PPLG.
+Ini tugas LKPD kelas X PPLG.
 
-Tema tugas: Function dan Modularitas Program.
+Tema tugasnya tentang function dan modularitas program.
 
-## Struktur Folder
+## Isi Folder
 
-```text
-tugas-sekolah/
-│
-├── diskon.php
-├── input-data.php
-├── pajak.php
-├── pembayaran.php
-├── total-harga.php
-│
-└── hasil-gabungan/
-    └── gabungan-kasir.php
-```
+Di folder utama ada file dari kelompok masing-masing.
 
-## Keterangan Folder
+- `input-data.php` untuk input barang
+- `total-harga.php` untuk hitung total harga
+- `diskon.php` untuk hitung diskon
+- `pajak.php` untuk hitung pajak
+- `pembayaran.php` untuk pembayaran
+- `cetak-struk.php` untuk cetak struk
 
-### Root Folder
+## Folder Hasil Gabungan
 
-File yang berada langsung di folder utama adalah file asli dari masing-masing kelompok.
+Folder `hasil-gabungan` isinya file yang sudah digabung.
 
-Contoh:
-
-- `input-data.php` = fitur input data barang
-- `total-harga.php` = fitur hitung total
-- `diskon.php` = fitur diskon
-- `pajak.php` = fitur pajak
-- `pembayaran.php` = fitur pembayaran
-
-File-file ini berasal dari kelompok berbeda dan belum sepenuhnya menjadi satu sistem.
-
-### Folder `hasil-gabungan`
-
-Folder `hasil-gabungan` berisi file hasil integrasi.
-
-File utama:
+File yang dibuka:
 
 - `gabungan-kasir.php`
 
-File ini digunakan untuk melihat hasil akhir sistem kasir sederhana yang sudah digabung.
+Jadi kalau mau lihat hasil akhirnya, buka file yang ada di folder `hasil-gabungan`.
 
-## Cara Menjalankan
+## Cara Membuka
 
-1. Buka Laragon.
-2. Pastikan Apache sudah berjalan.
-3. Simpan project di folder:
-
-```text
-C:\laragon\www\tugas-sekolah
-```
-
-4. Buka browser.
-5. Jalankan file hasil gabungan:
+1. Nyalakan Laragon
+2. Start Apache
+3. Buka browser
+4. Ketik:
 
 ```text
 http://localhost/tugas-sekolah/hasil-gabungan/gabungan-kasir.php
 ```
 
-## Fitur Sistem Kasir
+## Fitur Program
 
-Sistem kasir sederhana ini memiliki 6 fitur utama:
+Program kasir ini punya 6 bagian:
 
 1. Input Data Barang
 2. Hitung Total
@@ -74,22 +47,10 @@ Sistem kasir sederhana ini memiliki 6 fitur utama:
 5. Pembayaran
 6. Cetak Struk
 
-## Penjelasan Modularitas
+## Keterangan
 
-Program dibuat modular karena setiap fitur dipisahkan berdasarkan tugasnya.
+File di folder utama adalah file dari kelompok lain.
 
-Contoh function:
+File di folder `hasil-gabungan` adalah hasil gabungan dari semua fitur.
 
-- `inputKasir()` untuk input data barang
-- `hitungDiskon()` untuk menghitung diskon
-- `hitungPajak()` untuk menghitung pajak
-- `cetakStruk()` untuk menampilkan struk
-
-Dengan modularitas, program lebih mudah dibaca, diperbaiki, dan digabung dengan kode dari kelompok lain.
-
-## Catatan
-
-File di root folder adalah file dari kelompok lain.
-
-File di folder `hasil-gabungan` adalah file yang digunakan untuk melihat hasil akhir integrasi.
-```
+Program ini dibuat supaya semua function dari tiap kelompok bisa dipakai dalam satu sistem kasir.
