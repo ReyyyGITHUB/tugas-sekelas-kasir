@@ -8,12 +8,12 @@ Tema tugasnya tentang function dan modularitas program.
 
 Di folder utama ada file dari kelompok masing-masing.
 
-- `input-data.php` untuk input barang
-- `total-harga.php` untuk hitung total harga
-- `diskon.php` untuk hitung diskon
-- `pajak.php` untuk hitung pajak
-- `pembayaran.php` untuk pembayaran
-- `cetak-struk.php` untuk cetak struk
+- `input-data.php` untuk input barang (Kelompok 1)
+- `total-harga.php` untuk hitung total harga (Kelompok 2)
+- `diskon.php` untuk hitung diskon (Kelompok 3)
+- `pajak.php` untuk hitung pajak (Kelompok 4)
+- `pembayaran.php` untuk pembayaran (Kelompok 5)
+- `cetak-struk.php` untuk cetak struk (Kelompok 6)
 
 ## Folder Hasil Gabungan
 
