@@ -230,35 +230,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </div>
 
-<script>
-
-function hitungTotalPajak() {
-
-    let ppn =
-        parseFloat(document.querySelector('[name="ppn"]').value) || 0;
-
-    let penjualan =
-        parseFloat(document.querySelector('[name="penjualan"]').value) || 0;
-
-    let layanan =
-        parseFloat(document.querySelector('[name="layanan"]').value) || 0;
-
-    let pengiriman =
-        parseFloat(document.querySelector('[name="pengiriman"]').value) || 0;
-
-    let total =
-        ppn +
-        penjualan +
-        layanan +
-        pengiriman;
-
-    document.getElementById("persen_pajak").value = total;
-}
-
-
-hitungTotalPajak();
-
-</script>
-
 </body>
 </html>
