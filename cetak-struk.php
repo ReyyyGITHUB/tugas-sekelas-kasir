@@ -1,6 +1,6 @@
 <?php
 
-$namaBarang = "Mouse";
+$namaProduk = "Mouse";
 $harga = 150000;
 $diskon = 32000;
 $pajak = 5000;
@@ -8,10 +8,10 @@ $total = 140000;
 $uangBayar = 150000;
 $kembalian = 10000;
 
-function cetakStruk($namaBarang, $harga, $total, $diskon, $pajak, $uangBayar, $kembalian)
+function cetakStruk($namaProduk, $harga, $total, $diskon, $pajak, $uangBayar, $kembalian)
 {
     echo "<h3>--- STRUK KASIR ---</h3>";
-    echo "Barang     : " . $namaBarang . "<br>";
+    echo "Barang     : " . $namaProduk . "<br>";
     echo "Harga      : Rp " . $harga . "<br>";
     echo "Diskon     : Rp " . $diskon . "<br>";
     echo "Pajak      : Rp " . $pajak . "<br>";
@@ -23,6 +23,6 @@ function cetakStruk($namaBarang, $harga, $total, $diskon, $pajak, $uangBayar, $k
     echo "</div>";
 }
 
-cetakStruk($namaBarang, $harga, $total, $diskon, $pajak, $uangBayar, $kembalian);
+cetakStruk($namaProduk, $harga, $total, $diskon, $pajak, $uangBayar, $kembalian);
 
 ?>

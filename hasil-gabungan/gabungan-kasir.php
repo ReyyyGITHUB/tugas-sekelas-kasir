@@ -42,10 +42,10 @@ function hitungPajak($totalHarga, $persenPajak) {
         "totalPajak" => $totalPajak
     ];
 }
-function cetakStruk($namaBarang, $harga, $total, $diskon, $pajak, $uangBayar, $kembalian)
+function cetakStruk($namaProduk, $harga, $total, $diskon, $pajak, $uangBayar, $kembalian)
 {
     echo "<h3>--- STRUK KASIR ---</h3>";
-    echo "Barang     : " . $namaBarang . "<br>";
+    echo "Barang     : " . $namaProduk . "<br>";
     echo "Harga      : Rp " . $harga . "<br>";
     echo "Diskon     : Rp " . $diskon . "<br>";
     echo "Pajak      : Rp " . $pajak . "<br>";
@@ -77,6 +77,10 @@ function cetakStruk($namaBarang, $harga, $total, $diskon, $pajak, $uangBayar, $k
     Jumlah Barang:<br>
     <input type="number" name="jumlah" required><br><br>
 
+    Keterangan Diskon:<br>
+    Diskon otomatis 15% jika total harga lebih dari Rp250.000.<br>
+    Tidak perlu diisi manual.<br><br>
+
     PPN (%):<br>
     <input type="number" name="ppn" value="0"><br><br>
 
@@ -101,7 +105,7 @@ function cetakStruk($namaBarang, $harga, $total, $diskon, $pajak, $uangBayar, $k
 
 if (isset($_POST['proses'])) {
 
-    $namaBarang = $_POST['nama_barang'];
+    $namaProduk = $_POST['nama_barang'];
     $harga = $_POST['harga'];
     $jumlah = $_POST['jumlah'];
     $ppn = $_POST['ppn'];
@@ -110,7 +114,7 @@ if (isset($_POST['proses'])) {
     $pengiriman = $_POST['pengiriman'];
     $uangBayar = $_POST['uang_bayar'];
 
-    $dataBarang = inputKasir($namaBarang, $harga, $jumlah);
+    $dataBarang = inputKasir($namaProduk, $harga, $jumlah);
 
     if (isset($dataBarang["error"])) {
         echo $dataBarang["error"];
