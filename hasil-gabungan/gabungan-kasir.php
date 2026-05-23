@@ -42,7 +42,23 @@ function hitungPajak($totalHarga, $persenPajak) {
         "totalPajak" => $totalPajak
     ];
 }
-function cetakStruk($namaProduk, $harga, $total, $diskon, $pajak, $uangBayar, $kembalian)
+function prosesPembayaran($total, $bayar) {
+    if ($bayar >= $total) {
+        $kembalian = $bayar - $total;
+        return [
+            "status" => "BERHASIL",
+            "kembalian" => $kembalian,
+            "kurang" => 0
+        ];
+    } else {
+        $kurang = $total - $bayar;
+        return [
+            "status" => "GAGAL",
+            "kembalian" => 0,
+            "kurang" => $kurang
+        ];
+    }
+}function cetakStruk($namaProduk, $harga, $total, $diskon, $pajak, $uangBayar, $kembalian)
 {
     echo "<h3>--- STRUK KASIR ---</h3>";
     echo "Barang     : " . $namaProduk . "<br>";
@@ -129,8 +145,10 @@ if (isset($_POST['proses'])) {
 
         $pajak = $hasilPajak["pajak"];
         $total = $hasilPajak["totalPajak"];
-        if ($uangBayar >= $total) {
-            $kembalian = $uangBayar - $total;
+        $hasilPembayaran = prosesPembayaran($total, $uangBayar);
+
+        if ($hasilPembayaran["status"] == "BERHASIL") {
+            $kembalian = $hasilPembayaran["kembalian"];
 
             cetakStruk(
                 $dataBarang["nama_produk"],
@@ -142,7 +160,7 @@ if (isset($_POST['proses'])) {
                 number_format($kembalian, 0, ',', '.')
             );
         } else {
-            $kurang = $total - $uangBayar;
+            $kurang = $hasilPembayaran["kurang"];
 
             echo "<h3>Pembayaran Gagal</h3>";
             echo "Total Bayar: Rp " . number_format($total, 0, ',', '.') . "<br>";

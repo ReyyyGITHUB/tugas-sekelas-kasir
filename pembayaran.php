@@ -1,3 +1,22 @@
+<?php
+function prosesPembayaran($total, $bayar) {
+    if ($bayar >= $total) {
+        $kembalian = $bayar - $total;
+        return [
+            "status" => "BERHASIL",
+            "kembalian" => $kembalian,
+            "kurang" => 0
+        ];
+    } else {
+        $kurang = $total - $bayar;
+        return [
+            "status" => "GAGAL",
+            "kembalian" => 0,
+            "kurang" => $kurang
+        ];
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
 
@@ -110,18 +129,17 @@
             echo "<div class='hasil'>";
             echo "<h3>Ringkasan Transaksi:</h3>";
            
-            // Logika IF-ELSE untuk perhitungan pembayaran
-            if ($bayar >= $total) {
-                $kembalian = $bayar - $total;
+            $hasilPembayaran = prosesPembayaran($total, $bayar);
+
+            if ($hasilPembayaran["status"] == "BERHASIL") {
                 echo "<div class='sukses'>";
                 echo "<strong>STATUS: BERHASIL</strong><br>";
-                echo "Kembalian Anda: Rp " . number_format($kembalian, 0, ',', '.');
+                echo "Kembalian Anda: Rp " . number_format($hasilPembayaran["kembalian"], 0, ',', '.');
                 echo "</div>";
             } else {
-                $kurang = $total - $bayar;
                 echo "<div class='gagal'>";
                 echo "<strong>STATUS: GAGAL</strong><br>";
-                echo "Uang tidak cukup. Kurang: Rp " . number_format($kurang, 0, ',', '.');
+                echo "Uang tidak cukup. Kurang: Rp " . number_format($hasilPembayaran["kurang"], 0, ',', '.');
                 echo "</div>";
             }
             echo "</div>";
