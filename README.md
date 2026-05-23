@@ -1,6 +1,6 @@
 # Sistem Kasir Coffeshop
 
-tugas LKPD kelas X PPLG @.
+tugas LKPD kelas X PPLG 2.
 
 Tema tugasnya tentang function dan modularitas program.
 
