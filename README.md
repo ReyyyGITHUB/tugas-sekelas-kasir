@@ -1,4 +1,4 @@
-# Sistem Kasir Sederhana
+# Sistem Kasir Coffeshop
 
 Ini tugas LKPD kelas X PPLG.
 

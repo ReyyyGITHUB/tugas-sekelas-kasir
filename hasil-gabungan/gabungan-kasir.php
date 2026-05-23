@@ -61,11 +61,11 @@ function cetakStruk($namaBarang, $harga, $total, $diskon, $pajak, $uangBayar, $k
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sistem Kasir Gabungan</title>
+    <title>Sistem Kasir Coffeshop</title>
 </head>
 <body>
 
-<h2>Sistem Kasir Sederhana</h2>
+<h2>Sistem Kasir Coffeshop</h2>
 
 <form method="POST">
     Nama Barang:<br>
